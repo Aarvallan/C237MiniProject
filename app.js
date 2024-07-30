@@ -15,10 +15,14 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'bookstore'
+    //host: 'localhost'
+    //user: 'root'
+    //password: '',
+    //database: 'c237miniProj'
+    host: 'db4free.net',
+    user: 'username_created_for_db4free.net',
+    password: 'password_created_for_db4free.net',
+    database: 'databaseName_created_for_db4free.net'
 });
 
 connection.connect((err) => {
@@ -305,5 +309,6 @@ app.get('/credit-card', (req, res) => {
 app.get('/debit-card', (req, res) => {
     res.render('debit-card'); 
 });
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
